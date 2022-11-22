@@ -1,10 +1,11 @@
-import './App.css';
+import "bootstrap/dist/css/bootstrap.min.css"; 
+import "./App.css";
+import { Toaster } from "react-hot-toast";
 
 function App() {
   return (
     <div className="App">
-    <h1> Criado por Sergio Rocha</h1>
-  
+      <Toaster />
     </div>
   );
 }
