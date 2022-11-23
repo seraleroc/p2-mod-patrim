@@ -8,9 +8,9 @@ function ModalCreateMat({ reload, setReload }) {
     const [form, setForm] = useState({
         rp: "",
         item: "",
-        itemdetalhe: "",
-        sitfisica: "",
-        valcompra: "0",
+        itemDetalhe: "",
+        sitFisica: "",
+        valCompra: "0",
         localiz: "",
         observ: "",
     });
@@ -25,14 +25,14 @@ function handleChange(e) {
 async function handleSubmit(e) {
    e.preventDefault();
    try {
-    await axios.post("https://ironrest.cyclic.app/prj02modequipsiads", form);
+    await axios.post("https://ironrest.cyclic.app/prj02modequipsiads2", form);
     handleClose();
     setForm({
         rp: "",
         item: "",
-        itemdetalhe: "",
-        sitfisica: "",
-        valcompra: "0",
+        itemDetalhe: "",
+        sitFisica: "",
+        valCompra: "0",
         localiz: "",
         observ: "",
     });
@@ -75,8 +75,8 @@ return (
                         <Form.Control
                             type="text"
                             placeholder="Digite a descrição do material"
-                            name="itemdetalhe"
-                            value={form.itemdetalhe}
+                            name="itemDetalhe"
+                            value={form.itemDetalhe}
                             onChange={handleChange}
                         />
                         </Form.Group>
@@ -89,8 +89,8 @@ return (
                         <Form.Control
                             type="text"
                             placeholder="Qual a Situação do Material"
-                            name="sitfisica"
-                            value={form.sitfisica}
+                            name="sitFisica"
+                            value={form.sitFisica}
                             onChange={handleChange}
                         />
                         </Form.Group>
@@ -101,8 +101,8 @@ return (
                         <Form.Control
                             type="text"
                             placeholder="Valor de Compra"
-                            name="valcompra"
-                            value={form.valcompra}
+                            name="valCompra"
+                            value={form.valCompra}
                             onChange={handleChange}
                         />
                         </Form.Group>
