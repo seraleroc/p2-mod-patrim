@@ -57,6 +57,21 @@ return (
             <Form>
                 <Row>
                     <Col>
+                    <Form.Group className="mb-3">
+                        <Form.Label>Registro Patrimonial</Form.Label>
+                        <Form.Control
+                            type="number"
+                            placeholder="Digite o número do registro patrimonial"
+                            name="rp"
+                            value={form.rp}
+                            onChange={handleChange}
+                            autoFocus
+                        />
+                        </Form.Group>
+                    </Col>
+                </Row>
+                <Row>
+                    <Col>
                         <Form.Group className="mb-3">
                         <Form.Label>Nome do Material</Form.Label>
                         <Form.Control
@@ -65,7 +80,6 @@ return (
                             name="item"
                             value={form.item}
                             onChange={handleChange}
-                            autoFocus
                         />
                         </Form.Group>
                     </Col>
