@@ -2,9 +2,11 @@ import { Table, Container, Button } from "react-bootstrap";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import ModalCreateMat from "../components/ModalCreateMat";
+import { Link } from "react-router-dom";
 
 function HomePage() {
   const [items, setItems] = useState([]);
+  const [reload, setReload] = useState(false);
 
   useEffect(() => {
     async function fetchItems() {
@@ -16,7 +18,7 @@ function HomePage() {
     }
 
     fetchItems();
-  }, []);
+  }, [reload]);
 
   //console.log(items)
 
@@ -25,7 +27,7 @@ function HomePage() {
       <h1> Módulo de Cadastro / Consulta de Equipamentos</h1>
       <tr> </tr>
 
-      <Container>
+      <Container className="my-4">
         <Table striped bordered hover size="sm">
           <thead>
             <tr>
@@ -45,7 +47,9 @@ function HomePage() {
                   <td>{item.sitFisica}</td>
                   <td>{item.localiz}</td>
                   <td>
-                    <Button variant="outline-primary">Detalhes</Button>
+                    <Link to={`/equip/${item._id}`}>
+                      <Button variant="outline-primary">Detalhes</Button>
+                    </Link>
                   </td>
                 </tr>
               );
@@ -53,7 +57,7 @@ function HomePage() {
           </tbody>
         </Table>
 
-        <ModalCreateMat />
+        <ModalCreateMat reload={reload} setReload={setReload} />
       </Container>
     </div>
   );
