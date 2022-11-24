@@ -10,7 +10,7 @@ function ModalCreateMat({ reload, setReload }) {
         item: "",
         itemDetalhe: "",
         sitFisica: "",
-        valCompra: "0",
+        valCompra: "",
         localiz: "",
         observ: "",
     });
@@ -32,7 +32,7 @@ async function handleSubmit(e) {
         item: "",
         itemDetalhe: "",
         sitFisica: "",
-        valCompra: "0",
+        valCompra: "",
         localiz: "",
         observ: "",
     });
@@ -51,7 +51,7 @@ return (
 
     <Modal show={show} onHide={handleClose} size="xl">
         <Modal.Header closeButton>
-            <Modal.Title>Form Cadastro de Material</Modal.Title>
+            <Modal.Title>Cadastro de Material</Modal.Title>
         </Modal.Header>
         <Modal.Body>
             <Form>
@@ -111,7 +111,7 @@ return (
                 </Col>  
                     <Col>
                         <Form.Group className="mb-3">
-                        <Form.Label>Valor Inicial de Compra</Form.Label>
+                        <Form.Label>Valor de Compra</Form.Label>
                         <Form.Control
                             type="text"
                             placeholder="Valor de Compra"
