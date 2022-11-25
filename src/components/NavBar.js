@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 function NavBar() {
   return (
-    <Navbar bg="green" variant="green">
+    <Navbar bg="orange" variant="dark">
       <Container>
         <Link to="/" style={{ textDecoration: "none" }}>
           <Navbar.Brand as="div">
